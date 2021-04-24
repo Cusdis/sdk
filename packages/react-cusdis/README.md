@@ -7,7 +7,7 @@ $ npm i react-cusdis
 ## Usage
 
 ```tsx
-import { ReactCusdis } from 'react'
+import { ReactCusdis } from 'react-cusdis'
 
 function App() {
   return (
