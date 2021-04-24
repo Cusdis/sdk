@@ -9,7 +9,8 @@ export function ReactCusdis (props: {
     pageId: string,
     pageTitle?: string,
     pageUrl?: string,
-  }
+  },
+  style?: React.CSSProperties
 }) {
 
   const divRef = React.useRef<HTMLDivElement>(null)
@@ -31,7 +32,7 @@ export function ReactCusdis (props: {
   ])
 
   return (
-    <div ref={divRef}>
+    <div style={props.style} ref={divRef}>
       
     </div>
   )

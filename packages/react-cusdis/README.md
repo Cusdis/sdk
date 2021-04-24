@@ -33,6 +33,10 @@ function App() {
 
 Cusdis SDK attributs: https://cusdis.com/doc#/advanced/sdk
 
+#### style
+
+React.CSSProperties
+
 # License
 
 MIT
