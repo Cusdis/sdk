@@ -1,16 +1,16 @@
 {
   "name": "vue-cusdis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "files": [
     "dist"
   ],
-  "main": "./dist/VueCusdis.umd.js",
-  "module": "./dist/VueCusdis.es.js",
+  "main": "./dist/vue-cusdis.umd.js",
+  "module": "./dist/vue-cusdis.es.js",
   "exports": {
     ".": {
-      "import": "./dist/VueCusdis.es.js",
-      "require": "./dist/VueCusdis.umd.js"
+      "import": "./dist/vue-cusdis.es.js",
+      "require": "./dist/vue-cusdis.umd.js"
     }
   },
   "scripts": {

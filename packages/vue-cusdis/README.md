@@ -6,7 +6,7 @@ $ npm i vue-cusdis
 
 ## Usage
 
-```tsx
+```ts
 import { defineComponent } from 'vue'
 import { VueCusdis } from 'vue-cusdis'
 
