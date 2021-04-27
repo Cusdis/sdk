@@ -8,6 +8,7 @@ export function ReactCusdis(props: {
     pageTitle?: string,
     pageUrl?: string,
   },
+  lang?: string,
   style?: React.CSSProperties
 }) {
 
@@ -21,8 +22,22 @@ export function ReactCusdis(props: {
     script.async = true
     script.defer = true
     document.body.appendChild(script)
+
+    let langScript: HTMLScriptElement | undefined
+
+    if (props.lang) {
+      const script = document.createElement('script')
+      script.src = `${host}/js/widget/lang/${props.lang}.js`
+      script.async = true
+      script.defer = true
+      document.body.appendChild(script)
+    }
+
     return () => {
       document.body.removeChild(script)
+      if (langScript) {
+        document.body.removeChild(langScript)
+      }
     }
   }, [])
 
@@ -38,7 +53,8 @@ export function ReactCusdis(props: {
     props.attrs.host,
     props.attrs.pageId,
     props.attrs.pageTitle,
-    props.attrs.pageUrl
+    props.attrs.pageUrl,
+    props.lang
   ])
 
   return (

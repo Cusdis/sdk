@@ -29,6 +29,23 @@ function App() {
 
 ### props
 
+#### lang
+
+For i18n. Available lang: https://cusdis.com/doc#/advanced/i18n
+
+Example: 
+
+```tsx
+<ReactCusdis
+  lang="zh-cn"
+  attrs={{
+    appId: '9e8df409-5055-4751-aa5f-4e08a66ce014',
+    host: 'http://localhost:3000',
+    pageId
+  }} 
+/>
+```
+
 #### attrs
 
 Cusdis SDK attributs: https://cusdis.com/doc#/advanced/sdk
