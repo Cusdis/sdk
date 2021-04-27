@@ -1,8 +1,6 @@
 import * as React from 'react'
-// @ts-expect-error
-import cusdis from 'cusdis'
 
-export function ReactCusdis (props: {
+export function ReactCusdis(props: {
   attrs: {
     host: string,
     appId: string,
@@ -15,25 +13,49 @@ export function ReactCusdis (props: {
 
   const divRef = React.useRef<HTMLDivElement>(null)
 
+  const host = props.attrs.host || 'https://cusdis.com'
+
+  React.useEffect(() => {
+    const script = document.createElement('script')
+    script.src = `${host}/js/cusdis.es.js`
+    script.async = true
+    script.defer = true
+    document.body.appendChild(script)
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
+
   React.useLayoutEffect(() => {
-    const el = divRef.current
-    if (el) {
-      // prevent duplicated render
-      el.innerHTML = ''
-      new cusdis({
-        target: el,
-        props: {
-          attrs: props.attrs
-        }
-      })
+    // @ts-expect-error
+    const render = window.renderCusdis
+
+    if (render) {
+      render(divRef.current)
     }
   }, [
-    props.attrs
+    props.attrs.appId,
+    props.attrs.host,
+    props.attrs.pageId,
+    props.attrs.pageTitle,
+    props.attrs.pageUrl
   ])
 
   return (
-    <div style={props.style} ref={divRef}>
-      
-    </div>
+    <>
+      <div
+        id="cusdis_thread" 
+        data-host={host}
+        data-page-id={props.attrs.pageId}
+        data-app-id={props.attrs.appId}
+        data-page-title={props.attrs.pageTitle}
+        data-page-url={props.attrs.pageUrl}
+        style={props.style} 
+        ref={divRef}
+      >
+
+      </div>
+      <script defer async src={`${props.attrs.host}/js/cusdis.es.js`}></script>
+    </>
   )
 }

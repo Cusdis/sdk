@@ -37,6 +37,12 @@ Cusdis SDK attributs: https://cusdis.com/doc#/advanced/sdk
 
 React.CSSProperties
 
+## Build
+
+```bash
+$ yarn dev
+```
+
 # License
 
 MIT
