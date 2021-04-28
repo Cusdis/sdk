@@ -198,11 +198,6 @@ csstype@^2.6.8:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.17.tgz#4cf30eb87e1d1a005d8b6510f95292413f6a1c0e"
   integrity sha512-u1wmTI1jJGzCJzWndZo8mk4wnPTZd1eOIYTYvuEyOQGfmDl3TrabCCfKnOC86FZwW/9djqTl933UF/cS425i9A==
 
-cusdis@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/cusdis/-/cusdis-1.1.0.tgz#74c81d8b8735869744d77507b057dd47f04e3bc2"
-  integrity sha512-0K+NC3XAiJ6QbxuwFlPRM2s0rIdYpgLzgRmLTca0YC/digPVxX+3X24KJfamuQQsOuJXj5pFuZLQ6Fp2Kg6TJw==
-
 duplexer2@~0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer2/-/duplexer2-0.1.4.tgz#8b12dab878c0d69e3e7891051662a32fc6bddcc1"
