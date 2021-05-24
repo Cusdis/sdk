@@ -7,6 +7,7 @@ export function ReactCusdis(props: {
     pageId: string,
     pageTitle?: string,
     pageUrl?: string,
+    theme?: 'light'|'dark'|'auto',
   },
   lang?: string,
   style?: React.CSSProperties
@@ -66,7 +67,8 @@ export function ReactCusdis(props: {
         data-app-id={props.attrs.appId}
         data-page-title={props.attrs.pageTitle}
         data-page-url={props.attrs.pageUrl}
-        style={props.style} 
+        data-theme={props.attrs.theme}
+        style={props.style}
         ref={divRef}
       >
 
