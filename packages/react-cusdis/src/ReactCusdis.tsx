@@ -27,11 +27,11 @@ export function ReactCusdis(props: {
     let langScript: HTMLScriptElement | undefined
 
     if (props.lang) {
-      const script = document.createElement('script')
-      script.src = `${host}/js/widget/lang/${props.lang}.js`
-      script.async = true
-      script.defer = true
-      document.body.appendChild(script)
+      langScript = document.createElement('script')
+      langScript.src = `${host}/js/widget/lang/${props.lang}.js`
+      langScript.async = true
+      langScript.defer = true
+      document.body.appendChild(langScript)
     }
 
     return () => {
