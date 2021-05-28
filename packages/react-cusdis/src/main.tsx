@@ -13,9 +13,10 @@ function App() {
       </div>
 
       <ReactCusdis
+        key={pageId}
         lang="zh-cn"
         attrs={{
-          appId: '9e8df409-5055-4751-aa5f-4e08a66ce014',
+          appId: '628096d1-0d4e-47c4-a14a-450bd2022215',
           host: 'http://localhost:3000',
           pageId
         }} />

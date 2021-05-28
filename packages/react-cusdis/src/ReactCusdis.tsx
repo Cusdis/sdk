@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useScript } from './useScript'
 
 export function ReactCusdis(props: {
   attrs: {
@@ -7,7 +8,7 @@ export function ReactCusdis(props: {
     pageId: string,
     pageTitle?: string,
     pageUrl?: string,
-    theme?: 'light'|'dark'|'auto',
+    theme?: 'light' | 'dark' | 'auto',
   },
   lang?: string,
   style?: React.CSSProperties
@@ -17,30 +18,8 @@ export function ReactCusdis(props: {
 
   const host = props.attrs.host || 'https://cusdis.com'
 
-  React.useEffect(() => {
-    const script = document.createElement('script')
-    script.src = `${host}/js/cusdis.es.js`
-    script.async = true
-    script.defer = true
-    document.body.appendChild(script)
-
-    let langScript: HTMLScriptElement | undefined
-
-    if (props.lang) {
-      langScript = document.createElement('script')
-      langScript.src = `${host}/js/widget/lang/${props.lang}.js`
-      langScript.async = true
-      langScript.defer = true
-      document.body.appendChild(langScript)
-    }
-
-    return () => {
-      document.body.removeChild(script)
-      if (langScript) {
-        document.body.removeChild(langScript)
-      }
-    }
-  }, [])
+  useScript(`${host}/js/cusdis.es.js`)
+  useScript(props.lang ? `${host}/js/widget/lang/${props.lang}.js` : '')
 
   React.useLayoutEffect(() => {
     // @ts-expect-error
@@ -61,7 +40,7 @@ export function ReactCusdis(props: {
   return (
     <>
       <div
-        id="cusdis_thread" 
+        id="cusdis_thread"
         data-host={host}
         data-page-id={props.attrs.pageId}
         data-app-id={props.attrs.appId}
@@ -73,7 +52,6 @@ export function ReactCusdis(props: {
       >
 
       </div>
-      <script defer async src={`${props.attrs.host}/js/cusdis.es.js`}></script>
     </>
   )
 }
