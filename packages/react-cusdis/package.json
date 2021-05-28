@@ -1,6 +1,6 @@
 {
   "name": "react-cusdis",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "main": "dist/ReactCusdis.js",
   "files": [
     "dist"

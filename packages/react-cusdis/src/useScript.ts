@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 export function useScript(src: string) {
   // Keep track of script status ("idle", "loading", "ready", "error")
   const [status, setStatus] = React.useState(src ? "loading" : "idle");
