@@ -21,7 +21,9 @@ export function ReactCusdis(props: {
   useScript(`${host}/js/cusdis.es.js`)
   useScript(props.lang ? `${host}/js/widget/lang/${props.lang}.js` : '')
 
-  React.useLayoutEffect(() => {
+  // the following line chooses useEffect on SSR
+  const useCustomizedEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect
+  useCustomizedEffect(() => {
     // @ts-expect-error
     const render = window.renderCusdis
 
