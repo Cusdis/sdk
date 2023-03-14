@@ -1,6 +1,6 @@
 {
   "name": "@cusdis/js",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Cusdis JS SDK",
   "publishConfig": {
     "access": "public"
