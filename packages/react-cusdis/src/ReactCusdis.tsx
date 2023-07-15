@@ -37,6 +37,11 @@ export function ReactCusdis(props: {
     props.lang
   ])
 
+  React.useEffect(() => {
+    // @ts-expect-error
+    window.CUSDIS?.setTheme(props.attrs.theme)
+  }, [props.attrs.theme])
+
   return (
     <>
       <div
